@@ -60,7 +60,7 @@ roll.addEventListener("click", function() {
 
     player2.score1 = Math.round(Math.random() * 5) + 1;
     player2.score2 = Math.round(Math.random() * 5) + 1;
-    if (player2.score1 == player2.score2) {
+    if (player2.score1 === player2.score2) {
         if (player2.score1 == 1) {
             player2.current == 0
         } else {
@@ -78,10 +78,10 @@ roll.addEventListener("click", function() {
    
     if (i >= 3){
         if ( player1.total > player2.total ){
-            winner_modal_title.innerHTML = `player1 is the winner`
+            winner_modal_title.innerHTML = `<p>Congratulation player1!!<br>Let's keep winning!</p>`
             
         } else{
-            winner_modal_title.innerHTML = `player2 is the winner`
+            winner_modal_title.innerHTML = `<p>You lost. <br>Maybe next time!</p>`
         }
         roll.setAttribute("disabled", '');
         return winner_modal.style.display = "block"

@@ -7,8 +7,25 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   overflow: hidden;
+  background-image: url("../images/dice-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .game {
   position: relative;
   width: 100%;
@@ -19,10 +36,13 @@ body {
 
 .game .box {
   overflow: hidden;
-  background-color: white;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(185, 185, 185, 0.7098039216);
+  background: rgba(255, 255, 255, 0.58);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
   /* background-image: url('images/default-img.jpeg'); */
 }
 
@@ -59,6 +79,11 @@ body {
   cursor: no-drop;
 }
 
+.player1, .player2 {
+  font-weight: bold;
+  font-size: 26px;
+}
+
 .modal, .winner-popup {
   display: none;
   position: fixed;
@@ -79,9 +104,15 @@ body {
   width: 75%;
   max-width: 700px;
   -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.9s;
   animation-name: animatetop;
-  animation-duration: 0.4s;
+  animation-duration: 0.9s;
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
 }
 
 .modal-content .title {
@@ -92,7 +123,7 @@ body {
 
 .close-btn {
   /*float: right;*/
-  color: lightgray;
+  color: #bbbaba;
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
@@ -128,9 +159,9 @@ body {
 }
 
 .dice-images img {
-  height: 100px;
-  width: 100px;
-  padding: 10px 0;
+  height: auto;
+  width: 150px;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
